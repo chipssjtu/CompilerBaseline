@@ -51,7 +51,5 @@ public class Main
         Translate.operate();
     }
 
-
-
 }
 
