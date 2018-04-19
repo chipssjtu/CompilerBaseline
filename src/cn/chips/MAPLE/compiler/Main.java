@@ -15,7 +15,7 @@ import java.io.*;
 
 public class Main
 {
-    static boolean localtest = true;
+    static boolean localtest = false;
     public static void main(String[] args) throws Exception
     {
         if (localtest) {
@@ -47,9 +47,8 @@ public class Main
         if(localtest) {
             root.getDecls().IRtraverse();
         }
-        
+
         Translate.operate();
     }
 
 }
-
