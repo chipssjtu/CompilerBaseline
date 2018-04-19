@@ -10,7 +10,7 @@ C_FILE="$1"
 BASE_NAME="${C_FILE%.*}"
 O_FILE="$BASE_NAME.o"
 NASM_FILE="$BASE_NAME.asm"
-gcc -Werror=implicit-function-declaration -fno-asynchronous-unwind-tables "$2" -c -o "$O_FILE" "$C_FILE"
+gcc -Werror=implicit-function-declaration -fno-asynchronous-unwind-tables "$2" -c -o "$O_FILE" "$C_FILE" -O3
 ./objconv -fnasm "$O_FILE" "$NASM_FILE"
 sed -i 's|st(0)|st0  |g' "$NASM_FILE"
 sed -i 's|noexecute|         |g' "$NASM_FILE"
@@ -24,4 +24,4 @@ sed -i 's|\s\+$||g' "$NASM_FILE"
 sed -i 's|align=1||g' "$NASM_FILE"
 rm "$O_FILE"
 cat $NASM_FILE
-#nasm -felf64 main.asm && gcc main.o && ./a.out
+#nasm -felf64 main.asm && gcc -O3 main.o && ./a.out

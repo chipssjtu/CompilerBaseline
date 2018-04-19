@@ -15,7 +15,7 @@ import java.io.*;
 
 public class Main
 {
-    static boolean localtest = false;
+    static boolean localtest = true;
     public static void main(String[] args) throws Exception
     {
         if (localtest) {

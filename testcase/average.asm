@@ -6,7 +6,7 @@
 ;
 ; Designed for OS X.  To assemble and run:
 ;
-;     nasm -fmacho64 average.asm && gcc average.o && ./a.out
+;     nasm -fmacho64 average.asm && gcc -O3 average.o && ./a.out
 ; -----------------------------------------------------------------------------
 
         global   _main
